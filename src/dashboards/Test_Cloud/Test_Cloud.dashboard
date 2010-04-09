@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>Test_Cloud/Global_Test_Execution_Status</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Test Cloud Status</title>
+            <useReportChart>true</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>Test_Cloud/Test_Status_Per_Test</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Individual Test Status</title>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>Test_Cloud/Test_Status_per_Browser</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Test Status by Browser</title>
+            <useReportChart>true</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>Test_Cloud/Execution_Type_per_Test</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title># of Execution Types per Test</title>
+            <useReportChart>true</useReportChart>
+        </components>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>Test_Cloud/Test_Execution_per_OS</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Test Status by OS</title>
+            <useReportChart>true</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>yn@testcloud.org</runningUser>
+    <textColor>#000000</textColor>
+    <title>Test Cloud</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>
