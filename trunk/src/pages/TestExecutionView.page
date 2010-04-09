@@ -1,0 +1,80 @@
+<apex:page standardController="TestExecution__c" extensions="TestExecutionExtension">
+	<apex:form >
+		<apex:pageBlock title="Test Execution Details">
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!edit}" value="Edit"/>
+				<apex:commandButton action="{!delete}" value="Delete"/>
+				<apex:commandButton action="{!clone}" value="Clone"/>
+				<apex:commandButton action="{!schedule}" value="Schedule execution"/>
+			</apex:pageBlockButtons>
+		
+			<apex:pageBlockSection >			
+				<apex:outputField value="{!TestExecution__c.Test__c}"/>
+				<apex:outputField value="{!TestExecution__c.OS__c}"/>
+				<apex:outputField value="{!TestExecution__c.Browser__c}"/>
+				<apex:outputField value="{!TestExecution__c.Version__c}"/>
+			</apex:pageBlockSection>
+
+			<apex:pageBlockSection title="Execution Details" >
+				<apex:outputField value="{!TestExecution__c.InProgress__c}"/>
+				<apex:outputField value="{!TestExecution__c.Phase__c}"/>
+				<apex:outputField value="{!TestExecution__c.Session_Id__c}"/>
+				<apex:outputField value="{!TestExecution__c.SeleniumServerLog__c}"/>
+			</apex:pageBlockSection>
+					
+		
+		
+	        <apex:pageBlockSection title="Video" id="video">
+	            <apex:pageBlockSection rendered="{!TestExecution__c.Session_Id__c==null}">
+	                <p>No video to show.</p>
+	            </apex:pageBlockSection>
+	            
+	            <apex:pageBlockSection rendered="true">
+	                <script src="http://saucelabs.com/base.js" type="text/javascript"></script>
+	                <script src="http://saucelabs.com/video-player/swfobject.js" type="text/javascript"></script>
+	                <script src="http://saucelabs.com/flowplayer/example/flowplayer-3.1.1.min.js" type="text/javascript"></script>
+	                <style>
+	                    div.movie {
+	                        display: table;
+	                    }
+	                </style>
+	
+	                <a href="." style="display: block; width: 600px; height: 450px" id="player"> </a>
+	                <!-- this will install flowplayer inside previous A- tag. -->
+	                <script src="http://saucelabs.com/video-embed/{!TestExecution__c.Session_Id__c}.js?username={!SauceUser}&access_key={!SauceAccessKey}"/>
+	
+	
+	                <!-- 
+	                <script>
+	            flowplayer("player", "http://saucelabs.com/flowplayer/flowplayer-3.1.1.swf", { 
+	                clip:  {
+	                    url:'https://saucelabs.com/jobs/{!testcloud1__Selenium_Execution__c.testcloud1__Session_Id__c}/video.flv',
+	                    provider: 'streamer', 
+	                    autoPlay: false,
+	                    autoBuffering: true,
+	                },
+	                log: {
+	                    level: 'info'
+	                },
+	                plugins: { 
+	                    streamer: { 
+	                        url: 'http://saucelabs.com/flowplayer/flowplayer.pseudostreaming-3.1.2.swf', 
+	                        //queryString: escape('?start=${start}') 
+	                    } 
+	                }  
+	            });
+	            </script>
+	            -->
+	                
+	         </apex:pageBlockSection>   
+         </apex:pageBlockSection>
+       </apex:pageBlock>
+	</apex:form>
+
+    <style>
+.fewerMore {
+    display: none;
+}
+</style>
+
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page >
+<apex:pageBlock >
+	<apex:pageBlockSection >
+		<apex:outputLink value="{!URLFOR($Resource.apexformat)}">Get the Apex Code Selenium IDE format here</apex:outputLink>
+	</apex:pageBlockSection>
+	<apex:pageBlockSection >
+		<apex:form >
+			<apex:commandButton action="{!scheduleExecutionManager}" value="Click here"> to start the Execution Manager</apex:commandButton>
+		</apex:form>
+	</apex:pageBlockSection>	
+</apex:pageBlock>
+</apex:page>
