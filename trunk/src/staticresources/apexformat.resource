@@ -1,7 +1,7 @@
 function format(testCase, name) {	
-  apexcode = "public class NewTest extends testcloud1.SauceTest{\n" +
+  apexcode = "global class NewTest extends testcloud1.SauceTest{\n" +
 	
-	"global class Step1 implements testcloud1.ITestStep { public boolean execute(testcloud1.ITest test, testcloud1.TestContext tc){\n" +
+	"global class Step1 implements testcloud1.ITestStep { global boolean execute(testcloud1.ITest test, testcloud1.TestContext tc){\n" +
 	"\tselenium1.DefaultSelenium s = test.getSelenium(tc.sessionId);\n" +	
     formatCommands(testCase.commands) +
 	"\treturn false;\n" +
@@ -13,7 +13,7 @@ function format(testCase, name) {
 	"\tsteps.add(new Step1());\n" +
 	"}\n\n" +
 	
-	"public NewTest(String os, String browser, String version) {\n" +
+	"global NewTest(String os, String browser, String version) {\n" +
 	"\tsuper(os, browser, version);\n" +
 	"}\n\n" +
 
