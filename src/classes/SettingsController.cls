@@ -6,18 +6,18 @@ public  class SettingsController {
         get {
             List<String> problems = new List<String>();
             // 1. check sauce related custom settings
-            if((testcloud1__TestCloudConfig__c.getInstance()==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__sauce_username__c==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__sauce_access_key__c==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__selenium_proxy_url__c==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__selenium_proxy_port__c==null))
+            if((TestCloudConfig__c.getInstance()==null)
+            || (TestCloudConfig__c.getInstance().sauce_username__c==null)
+            || (TestCloudConfig__c.getInstance().sauce_access_key__c==null)
+            || (TestCloudConfig__c.getInstance().selenium_proxy_url__c==null)
+            || (TestCloudConfig__c.getInstance().selenium_proxy_port__c==null))
                 problems.add('PROBLEM: Sauce settings not found. Check the values for your SauceLabs Accounts in the Custom Settings setup.');
 
             // 2. check salesforce custom settings
-            if((testcloud1__TestCloudConfig__c.getInstance()==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__SFDC_Login_URL__c==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__Username__c==null)
-            || (testcloud1__TestCloudConfig__c.getInstance().testcloud1__Password__c==null))
+            if((TestCloudConfig__c.getInstance()==null)
+            || (TestCloudConfig__c.getInstance().SFDC_Login_URL__c==null)
+            || (TestCloudConfig__c.getInstance().Username__c==null)
+            || (TestCloudConfig__c.getInstance().Password__c==null))
                 problems.add('PROBLEM: Salesforce settings not found. Check the values for your Salesforce test org in the Custom Settings setup.');
 
             // 3. Execution Manager
@@ -26,13 +26,13 @@ public  class SettingsController {
                 problems.add('PROBLEM: The Execution Manager is NOT running. Go to the \'Execution Manager\' section to start it.');
 
             // 4. Remote Sites Settings
-            if((testcloud1__TestCloudConfig__c.getInstance()!=null)
-            && (testcloud1__TestCloudConfig__c.getInstance().testcloud1__sauce_username__c!=null)
-            && (testcloud1__TestCloudConfig__c.getInstance().testcloud1__sauce_access_key__c!=null)
-            && (testcloud1__TestCloudConfig__c.getInstance().testcloud1__selenium_proxy_url__c!=null)
-            && (testcloud1__TestCloudConfig__c.getInstance().testcloud1__SFDC_Login_URL__c!=null)
-            && (testcloud1__TestCloudConfig__c.getInstance().testcloud1__Username__c!=null)
-            && (testcloud1__TestCloudConfig__c.getInstance().testcloud1__Password__c!=null)){            
+            if((TestCloudConfig__c.getInstance()!=null)
+            && (TestCloudConfig__c.getInstance().sauce_username__c!=null)
+            && (TestCloudConfig__c.getInstance().sauce_access_key__c!=null)
+            && (TestCloudConfig__c.getInstance().selenium_proxy_url__c!=null)
+            && (TestCloudConfig__c.getInstance().SFDC_Login_URL__c!=null)
+            && (TestCloudConfig__c.getInstance().Username__c!=null)
+            && (TestCloudConfig__c.getInstance().Password__c!=null)){            
                 TestSauceForce t = new TestSauceForce('purposedly invalid os','firefox','3');
                 try {
                     selenium1.DefaultSelenium s = t.getSelenium(null);
@@ -88,37 +88,37 @@ public  class SettingsController {
     
     public String SauceUser {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else
-                return testcloud1__TestCloudConfig__c.getInstance().testcloud1__sauce_username__c;
+                return TestCloudConfig__c.getInstance().sauce_username__c;
         }
     }
     
     public String SauceAccessKey {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else
-                return testcloud1__TestCloudConfig__c.getInstance().testcloud1__sauce_access_key__c;
+                return TestCloudConfig__c.getInstance().sauce_access_key__c;
         }
     }
 
     public String SauceSeleniumProxy {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else
-                return testcloud1__TestCloudConfig__c.getInstance().testcloud1__selenium_proxy_url__c;
+                return TestCloudConfig__c.getInstance().selenium_proxy_url__c;
         }
     }
 
     public String SauceSeleniumPort {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else {
-                decimal port = testcloud1__TestCloudConfig__c.getInstance().testcloud1__selenium_proxy_port__c;
+                decimal port = TestCloudConfig__c.getInstance().selenium_proxy_port__c;
                 if (port==null)
                     return null;
                 else
@@ -129,29 +129,44 @@ public  class SettingsController {
     
     public String SalesoforceLoginUrl {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else
-                return testcloud1__TestCloudConfig__c.getInstance().testcloud1__SFDC_Login_URL__c;
+                return TestCloudConfig__c.getInstance().SFDC_Login_URL__c;
         }
     }
 
     public String SalesoforceTestOrgUsername {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else
-                return testcloud1__TestCloudConfig__c.getInstance().testcloud1__Username__c;
+                return TestCloudConfig__c.getInstance().Username__c;
         }
     }
 
     public String SalesoforceTestOrgPassword {
         get {
-            if(testcloud1__TestCloudConfig__c.getInstance()==null)
+            if(TestCloudConfig__c.getInstance()==null)
                 return null;
             else
-                return testcloud1__TestCloudConfig__c.getInstance().testcloud1__Password__c;
+                return TestCloudConfig__c.getInstance().Password__c;
         }
+    }
+    
+    private static void writeDefaults() {
+    	TestCloudConfig__c config = new TestCloudConfig__c(setupOwnerId = System.Userinfo.getUserId());
+		config.username__c = 'yn@sauce.org';
+		config.password__c = 'test1234';
+		config.sfdc_login_url__c = 'http://login.salesforce.com';
+		
+		config.selenium_proxy_url__c = 'rc.saucelabs.com';
+		config.selenium_proxy_port__c = 7444;
+		
+		config.sauce_username__c = 'luisdmaya';
+		config.sauce_access_key__c = '14539675-e267-4264-9471-2ebc284fffb5';
+		
+		insert config;    	
     }
     
 }

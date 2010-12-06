@@ -3,14 +3,21 @@
     <backgroundEndColor>#FFFFFF</backgroundEndColor>
     <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
     <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
     <leftSection>
         <columnSize>Wide</columnSize>
         <components>
             <chartAxisRange>Auto</chartAxisRange>
             <componentType>Column</componentType>
             <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
             <legendPosition>Bottom</legendPosition>
             <report>Test_Cloud/Global_Test_Execution_Status</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
             <sortBy>RowLabelAscending</sortBy>
             <title>Test Cloud Status</title>
             <useReportChart>true</useReportChart>
@@ -22,8 +29,14 @@
             <chartAxisRange>Auto</chartAxisRange>
             <componentType>Column</componentType>
             <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
             <legendPosition>Bottom</legendPosition>
             <report>Test_Cloud/Test_Status_Per_Test</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
             <sortBy>RowLabelAscending</sortBy>
             <title>Individual Test Status</title>
             <useReportChart>true</useReportChart>
@@ -32,8 +45,14 @@
             <chartAxisRange>Auto</chartAxisRange>
             <componentType>Column</componentType>
             <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
             <legendPosition>Bottom</legendPosition>
             <report>Test_Cloud/Test_Status_per_Browser</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
             <sortBy>RowLabelAscending</sortBy>
             <title>Test Status by Browser</title>
             <useReportChart>true</useReportChart>
@@ -45,8 +64,14 @@
             <chartAxisRange>Auto</chartAxisRange>
             <componentType>Column</componentType>
             <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
             <legendPosition>Bottom</legendPosition>
             <report>Test_Cloud/Execution_Type_per_Test</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
             <sortBy>RowLabelAscending</sortBy>
             <title># of Execution Types per Test</title>
             <useReportChart>true</useReportChart>
@@ -55,8 +80,14 @@
             <chartAxisRange>Auto</chartAxisRange>
             <componentType>Column</componentType>
             <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
             <legendPosition>Bottom</legendPosition>
             <report>Test_Cloud/Test_Execution_per_OS</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
             <sortBy>RowLabelAscending</sortBy>
             <title>Test Status by OS</title>
             <useReportChart>true</useReportChart>

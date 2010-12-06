@@ -9,10 +9,15 @@
             <column>RowCount</column>
         </chartSummaries>
         <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
         <groupingColumn>Test__c.TestExecutions__r$Status__c</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Test__c.TestExecutions__r$OS__c</secondaryGroupingColumn>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
         <showValues>true</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
@@ -49,6 +54,10 @@
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Test Execution per OS</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>Test_Executions__c</reportType>
     <scope>user</scope>
     <showDetails>true</showDetails>
