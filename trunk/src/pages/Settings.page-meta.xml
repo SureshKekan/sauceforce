@@ -7,9 +7,4 @@
         <minorNumber>0</minorNumber>
         <namespace>selenium1</namespace>
     </packageVersions>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>9</minorNumber>
-        <namespace>testcloud1</namespace>
-    </packageVersions>
 </ApexPage>

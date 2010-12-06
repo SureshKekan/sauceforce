@@ -45,14 +45,14 @@ global class TestExecutioner {
            if (oe!=null) sem.seleniumServerLog__c = oe.getMessage();
            if (serverLog!=null) sem.seleniumServerLog__c += '\n' + serverLog;
            update(sem);
-           if (oe!=null) throw oe; 
+           //if (oe!=null) throw oe; 
        }       
    }
    
    private static String getServerLog(String sessionId) {
            HttpRequest req = new HttpRequest();
-            String username = TestCloudConfig__c.getInstance().testcloud1__sauce_username__c;                                    
-            String password = TestCloudConfig__c.getInstance().testcloud1__sauce_access_key__c;
+            String username = TestCloudConfig__c.getInstance().sauce_username__c;                                    
+            String password = TestCloudConfig__c.getInstance().sauce_access_key__c;
            
            req.setEndpoint('https://saucelabs.com/rest/' + username + '/jobs/' + sessionId + '/results/selenium-server.log');
            req.setMethod('GET');

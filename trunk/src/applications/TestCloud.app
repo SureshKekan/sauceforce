@@ -6,4 +6,5 @@
     <tab>Test__c</tab>
     <tab>standard-Dashboard</tab>
     <tab>standard-report</tab>
+    <tab>Test_Cloud_Settings</tab>
 </CustomApplication>

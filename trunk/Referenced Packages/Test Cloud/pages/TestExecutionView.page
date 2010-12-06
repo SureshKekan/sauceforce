@@ -1,0 +1,52 @@
+<apex:page standardController="testcloud1__TestExecution__c" showHeader="true">
+    <apex:detail relatedList="true" />
+
+    <apex:form >
+        <apex:pageBlock title="Video" id="video">
+            <apex:pageBlockSection rendered="{!testcloud1__TestExecution__c.testcloud1__Session_Id__c==null}">
+                <p>No video to show.</p>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="true">
+                <script src="http://saucelabs.com/base.js" type="text/javascript"></script>
+                <script src="http://saucelabs.com/video-player/swfobject.js" type="text/javascript"></script>
+                <script src="http://saucelabs.com/flowplayer/example/flowplayer-3.1.1.min.js" type="text/javascript"></script>
+                <style>
+                    div.movie {
+                        display: table;
+                    }
+                </style>
+
+                <a href="." style="display: block; width: 600px; height: 450px" id="player"> </a>
+                <!-- this will install flowplayer inside previous A- tag. -->
+                <script src="http://saucelabs.com/video-embed/{!TestExecution__c.Session_Id__c}.js?username=luisdmaya&access_key=14539675-e267-4264-9471-2ebc284fffb5"/>
+                <!-- 
+                <script>
+            flowplayer("player", "http://saucelabs.com/flowplayer/flowplayer-3.1.1.swf", { 
+                clip:  {
+                    url:'https://saucelabs.com/jobs/{!Selenium_Execution__c.Session_Id__c}/video.flv',
+                    provider: 'streamer', 
+                    autoPlay: false,
+                    autoBuffering: true,
+                },
+                log: {
+                    level: 'info'
+                },
+                plugins: { 
+                    streamer: { 
+                        url: 'http://saucelabs.com/flowplayer/flowplayer.pseudostreaming-3.1.2.swf', 
+                        //queryString: escape('?start=${start}') 
+                    } 
+                }  
+            });
+            </script>
+            -->
+         </apex:pageBlockSection>   
+       </apex:pageBlock>
+    </apex:form>
+    <style>
+.fewerMore {
+    display: none;
+}
+</style>
+
+</apex:page>

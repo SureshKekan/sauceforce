@@ -9,9 +9,15 @@
             <column>RowCount</column>
         </chartSummaries>
         <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
         <groupingColumn>Test__c$Name</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
@@ -40,6 +46,10 @@
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Execution Type per Test</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>Test_Executions__c</reportType>
     <scope>user</scope>
     <showDetails>true</showDetails>
