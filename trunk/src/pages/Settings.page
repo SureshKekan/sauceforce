@@ -1,12 +1,74 @@
-<apex:page >
-<apex:pageBlock >
-	<apex:pageBlockSection >
-		<apex:outputLink value="{!URLFOR($Resource.apexformat)}">Get the Apex Code Selenium IDE format here</apex:outputLink>
-	</apex:pageBlockSection>
-	<apex:pageBlockSection >
-		<apex:form >
-			<apex:commandButton action="{!scheduleExecutionManager}" value="Click here"> to start the Execution Manager</apex:commandButton>
-		</apex:form>
-	</apex:pageBlockSection>	
-</apex:pageBlock>
+<apex:page controller="SettingsController">
+<apex:panelBar > 
+    <apex:panelBarItem label="Test Cloud Settings Check">
+    	<apex:repeat value="{!settingsCheck}" var="msg">
+    		<apex:outputPanel layout="block">
+    			{!msg}
+    		</apex:outputPanel>
+    	</apex:repeat>
+    </apex:panelBarItem>
+
+    <apex:panelBarItem label="Execution Manager">
+       <apex:outputPanel layout="block" style="margin:10px;">
+
+            <apex:form rendered="{!NOT(isScheduled)}">
+                <apex:commandButton action="{!scheduleExecutionManager}" value="Click here"> to start the Execution Manager</apex:commandButton>
+            </apex:form>
+            <apex:form rendered="{!isScheduled}">
+                <apex:commandButton action="{!unscheduleExecutionManager}" value="Click here"> to Make changes to your tests</apex:commandButton>
+            </apex:form>            
+
+        </apex:outputPanel>
+    </apex:panelBarItem>
+
+
+    <apex:panelBarItem label="Sauce Labs Settings">
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageblockSectionItem >
+                <apex:outputText >Sauce Labs User</apex:outputText>
+                {!SauceUser}
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                <apex:outputText >Sauce Labs Access Key</apex:outputText>
+                {!SauceAccessKey}
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                <apex:outputText >Sauce Labs Selenium Proxy</apex:outputText>
+                {!SauceSeleniumProxy}
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                <apex:outputText >Sauce Labs Selenium Port</apex:outputText>
+                {!SauceSeleniumPort}
+                </apex:pageblockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:panelBarItem>        
+
+    <apex:panelBarItem label="Salesforce Test Org Settings">
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageblockSectionItem >
+                <apex:outputText >Salesforce User</apex:outputText>
+                {!SalesoforceTestOrgUsername}
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                <apex:outputText >Salesforce Passowrd</apex:outputText>
+                {!SalesoforceTestOrgPassword}
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                <apex:outputText >Salesforce Login URL</apex:outputText>
+                {!SalesoforceLoginUrl}
+                </apex:pageblockSectionItem>                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:panelBarItem>        
+
+
+    <apex:panelBarItem label="Apex Code Selenium Format">
+        <apex:outputLink value="{!URLFOR($Resource.apexformat)}">Get the Apex Code Selenium IDE format here</apex:outputLink>
+    </apex:panelBarItem>
+        
+</apex:panelBar>
 </apex:page>

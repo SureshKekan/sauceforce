@@ -45,4 +45,10 @@ global class TestExecutionManager implements Schedulable, testcloud1.ITestExecut
        }
 
    }
+   
+   public static void unschedule() {
+ 		for(CronTrigger ct: [select id from CronTrigger]) {
+ 			System.abortJob(ct.id);
+ 		}   		
+   }    
 }
