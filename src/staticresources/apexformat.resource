@@ -1,23 +1,23 @@
 function format(testCase, name) {	
-  apexcode = "public class NewTest extends SauceTest{\n" +
+  apexcode = "global class NewTest extends testcloud1.SauceTest{\n" +
 	
-	"global class Step1 implements testcloud1.ITestStep { public boolean execute(ITest test, TestContext tc){\n" +
+	"global class Step1 implements testcloud1.ITestStep { global boolean execute(testcloud1.ITest test, testcloud1.TestContext tc){\n" +
 	"\tselenium1.DefaultSelenium s = test.getSelenium(tc.sessionId);\n" +	
     formatCommands(testCase.commands) +
 	"\treturn false;\n" +
 	"} }\n" +
 
-	"static List<ITestStep> steps = new List<ITestStep>();\n" +
+	"static List<testcloud1.ITestStep> steps = new List<testcloud1.ITestStep>();\n" +
 	"static\n" + 
 	"{\n" +		
 	"\tsteps.add(new Step1());\n" +
 	"}\n\n" +
 	
-	"public NewTest(String os, String browser, String version) {\n" +
+	"global NewTest(String os, String browser, String version) {\n" +
 	"\tsuper(os, browser, version);\n" +
 	"}\n\n" +
 
-	"global override ITestStep getStep(integer step) {\n" +
+	"global override testcloud1.ITestStep getStep(integer step) {\n" +
 	"\tif (step<=steps.size())\n" +
 	"\t\treturn steps.get(step-1);\n" +
 	"\telse\n" +
@@ -32,7 +32,7 @@ function formatCommands(commands) {
   for (var i = 0; i < commands.length; i++) {
     var command = commands[i];
     if (command.type == 'command') {      
-      result = result + qualifyCommand(command.command) + "('" + command.target + "'" + 
+      result = result + qualifyCommand(command.command) + "('" + escapeSingleQuote(command.target) + "'" + 
       getCommandValue(command.value) + ");\n";
     }
   }
@@ -101,8 +101,12 @@ function qualifyCommand(commandName) {
 	return "\t" + DEFAULT_SELENIUM_VARIABLE + "." + commandName;
 }
 
+function escapeSingleQuote(value) {
+   return value.replace(/\'/g,"\\\'");
+}
+
 function getCommandValue(value) {
-	return value ? ", '" + value + "'" : "";
+	return value ? ", '" + escapeSingleQuote(value) + "'" : "";
 }
 
 DEFAULT_SELENIUM_VARIABLE = "s";
