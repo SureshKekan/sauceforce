@@ -10,7 +10,7 @@
         </chartSummaries>
         <chartType>HorizontalBarGrouped</chartType>
         <enableHoverLabels>false</enableHoverLabels>
-        <expandOthers>false</expandOthers>
+        <expandOthers>true</expandOthers>
         <groupingColumn>Test__c.TestExecutions__r$Status__c</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
@@ -31,16 +31,7 @@
         <field>Test__c$Name</field>
     </columns>
     <columns>
-        <field>Test__c.TestExecutions__r$Browser__c</field>
-    </columns>
-    <columns>
         <field>Test__c.TestExecutions__r$OS__c</field>
-    </columns>
-    <columns>
-        <field>Test__c.TestExecutions__r$Version__c</field>
-    </columns>
-    <columns>
-        <field>Test__c.TestExecutions__r$Status__c</field>
     </columns>
     <format>Summary</format>
     <groupingsDown>

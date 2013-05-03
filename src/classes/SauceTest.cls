@@ -33,7 +33,7 @@ global abstract class SauceTest implements ITest{
         s.open('/');
         s.type('username', TestCloudConfig__c.getInstance().username__c);
         s.type('password', TestCloudConfig__c.getInstance().password__c);
-        s.clickAndWait('css=input.login_click');    
+        s.clickAndWait('css=input.loginButton');    
     }
         
     public virtual selenium1.DefaultSelenium makeSelenium() {
