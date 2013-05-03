@@ -38,9 +38,6 @@
     <columns>
         <field>Test__c.TestExecutions__r$Version__c</field>
     </columns>
-    <columns>
-        <field>Test__c.TestExecutions__r$Status__c</field>
-    </columns>
     <description>Status of all test executions</description>
     <format>Summary</format>
     <groupingsDown>

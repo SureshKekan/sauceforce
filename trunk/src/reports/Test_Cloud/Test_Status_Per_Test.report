@@ -10,7 +10,7 @@
         </chartSummaries>
         <chartType>HorizontalBarGrouped</chartType>
         <enableHoverLabels>false</enableHoverLabels>
-        <expandOthers>false</expandOthers>
+        <expandOthers>true</expandOthers>
         <groupingColumn>Test__c.TestExecutions__r$Status__c</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
@@ -28,9 +28,6 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>Test__c$Name</field>
-    </columns>
-    <columns>
         <field>Test__c.TestExecutions__r$Browser__c</field>
     </columns>
     <columns>
@@ -38,9 +35,6 @@
     </columns>
     <columns>
         <field>Test__c.TestExecutions__r$Version__c</field>
-    </columns>
-    <columns>
-        <field>Test__c.TestExecutions__r$Status__c</field>
     </columns>
     <description>For each test what is the status of it in the different types</description>
     <format>Summary</format>

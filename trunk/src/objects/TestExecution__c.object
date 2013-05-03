@@ -15,6 +15,7 @@
     <actionOverrides>
         <actionName>Edit</actionName>
         <content>TestExecutionEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
     <actionOverrides>
@@ -24,6 +25,7 @@
     <actionOverrides>
         <actionName>New</actionName>
         <content>TestExecutionNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
     <actionOverrides>
@@ -33,6 +35,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <content>TestExecutionView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -168,6 +171,7 @@
         <relationshipLabel>TestExecutions</relationshipLabel>
         <relationshipName>TestExecutions</relationshipName>
         <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
